@@ -9,6 +9,10 @@ const resetButton = document.querySelector('#reset-button');
 
 
 const computersNumber = Math.ceil(Math.random() * 10);
+const input = playersGuessInputBox;
+const playersGuess = Number(playersGuessInputBox.value); 
+
+console.log(input);
 
 let guessesLeft = 4;
 
@@ -17,7 +21,6 @@ let guessesLeft = 4;
 
 buttonEl.addEventListener('click', () => {
 
-    const playersGuess = Number(playersGuessInputBox.value); 
     const num = compareNumber(playersGuess, computersNumber); 
 
     if (num === -1) {
@@ -37,13 +40,25 @@ buttonEl.addEventListener('click', () => {
     }    
 });
 
+
+// function clear() {
+//     document.querySelector('#reset-button').reset();
+
+// }
+
+
 resetButton.addEventListener('click', () => {
 
-    guessesLeft = 4;
-    guessesLeftDiv.textContent = '4';
-    tooHighTooLowDiv.textContent = '';
-    playersGuessInputBox.textContent = '';
+    location.reload();
+    
 
+//     document.querySelector('#reset-button').reset();
+
+//     // guessesLeft = 4;
+//     // guessesLeftDiv.textContent = '4';
+//     // tooHighTooLowDiv.textContent = '';
+//     // buttonEl.disabled = false;
+//     // input.value = '';
 
 });
 
